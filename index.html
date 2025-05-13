@@ -7,13 +7,13 @@
  <meta name="XAR Files" content="index_html_files/xr_files.txt"/>
  <title>index</title>
  <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="preload" href="index_html_files/xr_fonts.css?444" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <script>if(navigator.userAgent.indexOf('Android')!=-1){ document.write('<link rel="stylesheet" href="index_html_files/xr_fontsrep.css?444"/>');}</script> 
+ <link rel="preload" href="index_html_files/xr_fonts.css?445" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
+ <script>if(navigator.userAgent.indexOf('Android')!=-1){ document.write('<link rel="stylesheet" href="index_html_files/xr_fontsrep.css?445"/>');}</script> 
  <script>document.documentElement.className="xr_bgh0";</script>
- <link rel="stylesheet" href="index_html_files/xr_main.css?444"/>
- <link rel="preload" href="index_html_files/custom_styles.css?444" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <link rel="preload" href="index_html_files/xr_text.css?444" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <script src="index_html_files/roe.js?444"></script>
+ <link rel="stylesheet" href="index_html_files/xr_main.css?445"/>
+ <link rel="preload" href="index_html_files/custom_styles.css?445" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
+ <link rel="preload" href="index_html_files/xr_text.css?445" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
+ <script src="index_html_files/roe.js?445"></script>
  <script async src="index_html_files/replaceMobileFonts.js"></script>
  <script src="index_html_files/prs4.js"></script>
  <style>
@@ -277,7 +277,166 @@ resultDiv.innerHTML = message;
 </div>
  <img class="xr_rn_ xr_ap" src="index_html_files/326.webp" alt="" title="" style="left:488px;top:1931px;width:380px;height:380px;"/>
  <img class="xr_rn_ xr_ap" src="index_html_files/325.webp" alt="" title="" style="left:-104px;top:1931px;width:380px;height:380px;"/>
-<div class="xr_noreset " style="position: absolute; left:55px;top:599px;width:631px;height:333px;">
+<div class="xr_noreset " style="position: absolute; left:713px;top:451px;width:42px;height:25px;">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Crush Détecté</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Superposition rouge avec un fond semi-transparent */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 0, 0, 0.8); /* Rouge opaque à 80% */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      z-index: 9999;
+      opacity: 1;
+      animation: blinkBackground 1s infinite, fadeOut 8s forwards; /* Clignotement et disparition */
+    }
+
+    /* Animation de clignotement du fond */
+    @keyframes blinkBackground {
+      0% { background-color: rgba(255, 0, 0, 0.55); }
+      50% { background-color: rgba(255, 0, 0, 0.85); }
+      100% { background-color: rgba(255, 0, 0, 0.55); }
+    }
+
+    /* Animation de disparition après 5 secondes */
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Style du message */
+    .message {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 80%;
+      margin: 0 auto;
+      animation: bounce 2s infinite; /* Animation de rebond */
+    }
+
+    /* Animation de rebond */
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      25% { transform: translateY(-10px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Bouton d'alerte */
+    .alert-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+
+    .alert-btn:hover {
+      background-color: #d9534f;
+    }
+
+    /* Petit effet d'alerte avec clignotement */
+    .alert-btn:active {
+      animation: blinkBtn 0.5s infinite;
+    }
+
+    /* Clignotement du bouton d'alerte */
+    @keyframes blinkBtn {
+      0% { background-color: #ff6347; }
+      50% { background-color: #d9534f; }
+      100% { background-color: #ff6347; }
+    }
+
+    /* Style des alertes */
+    .alert {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #d9534f;
+      animation: flashAlert 1.5s infinite; /* Flash d'alerte */
+    }
+
+    /* Flash d'alerte */
+    @keyframes flashAlert {
+      0% { color: #d9534f; }
+      50% { color: #ff6347; }
+      100% { color: #d9534f; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay">
+    <div class="message">
+      <p>Crush détecté, tout le monde a son poste ! &#x1FAE1;</p>
+      <button class="alert-btn" onclick="confirmAction()">Confirmer !</button>
+      <div class="alert" id="alert-message" style="display: none;">Alert : Attention, danger ! ��</div>
+    </div>
+  </div>
+
+  <script>
+    // Fonction pour vérifier si plus de 10 minutes se sont écoulées depuis la première connexion
+    function checkFirstVisit() {
+      const firstVisitTime = localStorage.getItem('firstVisitTime');
+      const currentTime = Date.now();
+      
+      if (!firstVisitTime) {
+        // Première connexion, on enregistre l'heure
+        localStorage.setItem('firstVisitTime', currentTime);
+        return true;
+      } else {
+        // Si plus de 10 minutes se sont écoulées
+        const timeElapsed = currentTime - firstVisitTime;
+        console.log("Temps écoulé : " + timeElapsed);
+        if (timeElapsed >= 10 * 60 * 1000) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+
+    // Si la condition est remplie (première connexion ou 10 minutes écoulées)
+    if (checkFirstVisit()) {
+      // Afficher la superposition
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    // Fonction pour fermer la superposition et masquer le message
+    function confirmAction() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
+</div>
+<div class="xr_noreset " style="position: absolute; left:55px;top:131px;width:631px;height:333px;">
 <!DOCTYPE html>
 <html lang="fr">
 <head>
